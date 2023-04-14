@@ -17,7 +17,7 @@ function showSuccess(input) {
     parent.classList.remove('error');
     small.innerText = '';
 }
-
+//check rong
 function checkEmptyError(listInput) {
     let isEmptyError = false;
     listInput.forEach(input => {
@@ -34,7 +34,9 @@ function checkEmptyError(listInput) {
 }
 
 function checkEmailError(input) {
-    const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const regexEmail =  
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    
     input.value = input.value.trim();
 
     let isEmailError = !regexEmail.test(input.value);
@@ -75,7 +77,7 @@ form.addEventListener('submit', function (e) {
     e.preventDefault();
 
     let isEmptyError = checkEmptyError([username, email, password, confirmPassword])
-    let isEmailError = checkEmail(email);
+    let isEmailError = checkEmailError(email);
     let isUsernameLengthError = checkLengthError(username, 3, 10);
     let isPasswordLengthError = checkLengthError(password, 3, 10);
     let isMatchError = checkMatchPasswordError(password, confirmPassword)
