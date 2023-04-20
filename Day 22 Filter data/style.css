@@ -1,0 +1,82 @@
+:root {
+    --primary-color: rgb(31, 206, 198);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h1{
+    font-size: 35px;
+    color: rgb(235, 105, 12);
+}
+.control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 5px 25px;
+    margin: 10px 20px;
+    height: 45px;
+    width: 100px;
+    cursor: pointer;
+    background: white;
+    border-radius: 20px;
+    color: var(--primary-color);
+    border: var(--primary-color);
+}
+
+button.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.container {
+    background: rgb(205, 125, 177);
+    width: 1200px;
+    margin: 30px auto;
+    padding: 20px 50px;
+    border-radius: 50px;
+}
+
+.food-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-around;
+}
+
+.food {
+    height: 200px;
+    width: 23%;
+    margin: 15px 5px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+img:hover {
+    transition: 0.5s all;
+    transform: scale(2) rotate(60deg);
+
+}
+
+.hide {
+    display: none;
+}
